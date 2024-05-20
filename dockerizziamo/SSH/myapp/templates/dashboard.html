@@ -1,0 +1,59 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block style %}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("{% static 'img/dash-back.jpeg' %}");
+  background-size: cover;
+  background-position: center;
+}
+
+.iframe-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two iframes per row */
+  grid-gap: 0px; /* Adjust the gap between iframes */
+  margin-bottom: 20px; /* Add some spacing between rows */
+}
+
+.responsive-iframe {
+  width: 100%; /* Make the iframe fill the container width */
+  height: 28vh; /* Set height to 20% of viewport height */
+}
+
+
+
+@media screen and (max-width: 768px) {
+  /* Adjust layout for smaller screens */
+  .iframe-container {
+    grid-template-columns: 1fr; /* One iframe per row on smaller screens */
+  }
+
+  .responsive-iframe, .textbox {
+    height: 20vh; /* Adjust height for smaller screens */
+  }
+}
+{% endblock %}
+
+{% block content %}
+<div class="iframe-container">
+  <iframe class="responsive-iframe" src="https://grafana.agritechnextgeneration.it/d-solo/cdm6kc5mr1ts0f/dash?orgId=1&var-var={{ var }}&var-var1={{ var1 }}&var-var2={{ var2 }}&var-var3={{ var3 }}&var-var4={{ var4 }}&var-var5={{ var5 }}&var-var6={{ var6 }}&var-var7={{ var7 }}&var-var8={{ var8 }}&var-var9={{ var9 }}&from=1716106407544&to=1716128007544&panelId=5"  frameborder="0"></iframe>
+  <iframe class="responsive-iframe"  src="https://grafana.agritechnextgeneration.it/d-solo/cdm6kc5mr1ts0f/dash?orgId=1&var-var={{ var }}&var-var1={{ var1 }}&var-var2={{ var2 }}&var-var3={{ var3 }}&var-var4={{ var4 }}&var-var5={{ var5 }}&var-var6={{ var6 }}&var-var7={{ var7 }}&var-var8={{ var8 }}&var-var9={{ var9 }}&from=1716106501158&to=1716128101158&panelId=2" frameborder="0"></iframe>
+  <iframe class="responsive-iframe" src="https://grafana.agritechnextgeneration.it/d-solo/cdm6kc5mr1ts0f/dash?orgId=1&var-var={{ var }}&var-var1={{ var1 }}&var-var2={{ var2 }}&var-var3={{ var3 }}&var-var4={{ var4 }}&var-var5={{ var5 }}&var-var6={{ var6 }}&var-var7={{ var7 }}&var-var8={{ var8 }}&var-var9={{ var9 }}&from=1716106522166&to=1716128122166&panelId=4" frameborder="0"></iframe>
+  <iframe class="responsive-iframe" src="https://grafana.agritechnextgeneration.it/d-solo/cdm6kc5mr1ts0f/dash?orgId=1&var-var={{ var }}&var-var1={{ var1 }}&var-var2={{ var2 }}&var-var3={{ var3 }}&var-var4={{ var4 }}&var-var5={{ var5 }}&var-var6={{ var6 }}&var-var7={{ var7 }}&var-var8={{ var8 }}&var-var9={{ var9 }}&from=1716106548601&to=1716128148601&panelId=1" frameborder="0"></iframe>
+  <iframe class="responsive-iframe" src="https://grafana.agritechnextgeneration.it/d-solo/cdm6kc5mr1ts0f/dash?orgId=1&var-var={{ var }}&var-var1={{ var1 }}&var-var2={{ var2 }}&var-var3={{ var3 }}&var-var4={{ var4 }}&var-var5={{ var5 }}&var-var6={{ var6 }}&var-var7={{ var7 }}&var-var8={{ var8 }}&var-var9={{ var9 }}&from=1716106565097&to=1716128165098&panelId=3" frameborder="0"></iframe>
+  
+</div>
+
+
+{% endblock %}
